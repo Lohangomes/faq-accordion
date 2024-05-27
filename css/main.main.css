@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 8rem;
+}
+
+.section-accordion {
+  border-radius: 1.5rem;
+  padding: 4rem 3rem;
+  background-color: hsl(0, 0%, 100%);
+  width: 60rem;
+}
+.section-accordion .faqs {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 3rem;
+}
+.section-accordion .faqs h1 {
+  font-size: 4.6rem;
+  font-weight: 700;
+}
+.section-accordion .faqs h1,
+.section-accordion .list-accordion dt {
+  color: hsl(292, 42%, 14%);
+}
+.section-accordion .list-accordion {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+}
+.section-accordion .list-accordion dt {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.section-accordion .list-accordion dt::after {
+  content: url(../assets/images/icon-plus.svg);
+}
+.section-accordion .list-accordion dt.ativo::after {
+  content: url(../assets/images/icon-minus.svg);
+}
+.section-accordion .list-accordion dd {
+  color: hsl(292, 16%, 49%);
+  display: none;
+  animation: accordion 0.6s forwards;
+}
+.section-accordion .list-accordion dd.ativo {
+  display: block;
+}
+
+@keyframes accordion {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+body {
+  position: relative;
+  font-size: 1.6rem;
+  font-family: "Work Sans", sans-serif;
+  background-color: hsl(275, 100%, 97%);
+  background-image: url(../assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  line-height: 1.4;
+}
+
+@media (max-width: 560px) {
+  body {
+    background-image: url(../assets/images/background-pattern-mobile.svg);
+  }
+  .section-accordion {
+    max-width: 32rem;
+  }
+}/*# sourceMappingURL=main.main.css.map */

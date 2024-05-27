@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 8.0rem;
+}
+
+.section-accordion {
+  border-radius: 1.5rem;
+  padding: 4rem 3rem;
+  background-color: hsl(0, 0%, 100%);
+  width: 60rem;
+
+  .faqs {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 4.6rem;
+      font-weight: 700;
+    }
+  }
+
+  .faqs h1,
+  .list-accordion dt {
+    color: hsl(292, 42%, 14%);
+  }
+
+  .list-accordion {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+
+    dt {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    
+  
+     
+
+      &::after {
+        content: url(../assets/images/icon-plus.svg);
+      }
+
+      &.ativo::after{
+        content: url(../assets/images/icon-minus.svg);
+      }
+
+
+    }
+
+    dd {
+      color: hsl(292, 16%, 49%);
+      display: none;
+      animation: accordion 0.6s forwards;
+    
+
+      &.ativo {
+        display: block;
+        
+        
+      }
+    }
+  }
+
+ 
+}
+
+@keyframes accordion {
+
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to{
+
+    opacity: 1;
+   max-height: 200px;
+  }
+}
